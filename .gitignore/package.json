@@ -1,0 +1,21 @@
+{
+  "name": "ZakLeBot",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "discord.js-commando": "^0.10.0",
+    "ffmpeg-binaries": "^3.2.2-3",
+    "lowdb": "^1.0.0",
+    "npm": "^6.1.0",
+    "opusscript": "0.0.6",
+    "youtube-audio-stream": "^0.2.0"
+  },
+  "version": "1.0.0",
+  "description": "Soutiens enfoiré !",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ZakCstGame",
+  "license": "MIT"
+}
