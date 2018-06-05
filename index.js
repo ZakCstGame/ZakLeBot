@@ -95,13 +95,6 @@ function sendError(message, description) {
 bot.on("ready", async () => {
 	console.log(`Jui al frerot ! ${bot.user.username}`);
 	bot.user.setPresence({ game: { name: "ZakCstGame on YouTube", type:0} });
-	
-	try {
-		Let link = await bot.generateInvite(["ADMINISTRATOR"]);
-		console.log(link);
-	} catch(e) {
-		console.log(e.stack);
-	}
 });
 
 /*bot.on("guildMemberAdd", member => {
