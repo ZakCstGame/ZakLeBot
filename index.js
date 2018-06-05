@@ -92,9 +92,16 @@ function sendError(message, description) {
         }
 });*/
 
-bot.on("ready", () => {
+bot.on("ready", async () => {
+	console.log(`Jui al frerot ! ${bot.user.username}`);
 	bot.user.setPresence({ game: { name: "ZakCstGame on YouTube", type:0} });
-	console.log("Jui al frerot !");
+	
+	try {
+		Let link = await bot.generateInvite(["ADMINISRATOR"]);
+		console.log(link);
+	} catch(e) {
+		console.log(e.stack);
+	}
 });
 
 /*bot.on("guildMemberAdd", member => {
