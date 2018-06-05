@@ -1,12 +1,12 @@
 /* INCLURE */
 const Discord = require('discord.js');
-const Google = require('./LesCommandes/Random/google')
-const Play = require('./LesCommandes/Random/play');
+/*const Google = require('./LesCommandes/Random/google')
+const Play = require('./LesCommandes/Random/play');*/
 const commando = require('discord.js-commando');
 const bot = new commando.Client();
-bot.registry.registerGroup('random', 'Random');
+/*bot.registry.registerGroup('random', 'Random');
 bot.registry.registerDefaults();
-bot.registry.registerCommandsIn(__dirname + "/LesCommandes");
+bot.registry.registerCommandsIn(__dirname + "/LesCommandes");*/
 /* VARIABLES */
 
 const PREFIX = ".";
