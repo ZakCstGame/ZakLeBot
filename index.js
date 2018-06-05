@@ -97,7 +97,7 @@ bot.on("ready", async () => {
 	bot.user.setPresence({ game: { name: "ZakCstGame on YouTube", type:0} });
 	
 	try {
-		Let link = await bot.generateInvite(["ADMINISRATOR"]);
+		Let link = await bot.generateInvite(["ADMINISTRATOR"]);
 		console.log(link);
 	} catch(e) {
 		console.log(e.stack);
