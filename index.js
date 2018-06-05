@@ -122,9 +122,9 @@ bot.on("guildMemberAdd", function(member) {
 	});
 });
 
-bot.on('message', function (message) {
+/* bot.on('message', function (message) {
 	let commandUsed = Google.parse(message) || Play.parse(message)
-	});
+	});*/
 
 bot.on('message', message => {
 	if (message.content === "Wesh"){
