@@ -97,7 +97,7 @@ bot.on("ready", () => {
 	console.log("Jui al frerot !");
 });
 
-bot.on("guildMemberAdd", member => {
+/*bot.on("guildMemberAdd", member => {
 	member.guild.channels.find("name", "tout-ce-qui-se-passe").send(`:hamburger: ${member.user.username} vient de rejoindre la Familiana !`)
 });
 
@@ -122,7 +122,7 @@ bot.on("guildMemberAdd", function(member) {
 	});
 });
 
-/* bot.on('message', function (message) {
+bot.on('message', function (message) {
 	let commandUsed = Google.parse(message) || Play.parse(message)
 	});*/
 
