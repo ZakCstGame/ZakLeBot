@@ -25,7 +25,7 @@ var fortunes = [
 	"Je ne comprend pas ..",
 	"C'est totalement ridicule ..",
 	"Pfff .. ",
-	"Tu m'as saoulé xSSS",
+	"Tu m'as saoulÃ© xSSS",
 	"Laisse moi tranquille aussi, non !? ",
 	"Non",
 	"Peut-etre",
@@ -75,7 +75,7 @@ function sendError(message, description) {
             embed.setTitle('Voici ma chaine Yoututbe')
             .setAuthor('Merci pour ton soutiens la Familiana!', 'https://scontent-atl3-1.cdninstagram.com/vp/2fe4a3e66dd72b753cd7ed3ed14a183d/5B97A300/t51.2885-15/e35/30830152_893895250813876_4433143965939662848_n.jpg')
             .setColor(0xF4A460)
-            .setDescription("Merci pour ton soutiens la Familiana, j'ai une chaine Youtube où je fais des vidéos Gaming")
+            .setDescription("Merci pour ton soutiens la Familiana, j'ai une chaine Youtube oÃ¹ je fais des vidÃ©os Gaming")
             .setFooter('ZakCstGame', 'https://cdn.discordapp.com/attachments/427931248514564127/449675000014700574/image.png')
             .setImage('https://scontent-atl3-1.cdninstagram.com/vp/2fe4a3e66dd72b753cd7ed3ed14a183d/5B97A300/t51.2885-15/e35/30830152_893895250813876_4433143965939662848_n.jpg')
             .setThumbnail("https://discord.gg/cCerN6F")
@@ -83,8 +83,8 @@ function sendError(message, description) {
             .setURL('https://www.youtube.com/channel/UC88VHjLuOhgautADpcD4pkw');
 
             embed.addField("SALUT SALAM SHALOM ", "__**MON SERVEUR DiSCORD**__ :", "http://discord.gg/cCerN6F")
-            .addField("ZakCstGame est un serveur Familial. Il y'a des gameurs, des petits Youtubeurs et toutes sortes de Broseurs. On accepte tout les frères et sœurs.", "Chez nous tu pourra **discuter** de tout et n'importe quoi : de tout ce qui est lie aux __Jeux__ (notamment Mobile Legends, AoV, PUBG, Fortnite...) et __YouTube__ avec les **joueurs**. Tu peux trouvez des equipes, des coequipiers ou des amis avec lesquels tu pourra jouer et vous classer ensemble. Tu peux aussi **discuter** des strategies, des builds et des astuces pour un certain heros afin d'ameliorer tes competences.")
-			.addField("Si tu as une question ?", " ~~N'hésite~~ surtout ~~pas~~ a me demander !! ")
+            .addField("ZakCstGame est un serveur Familial. Il y'a des gameurs, des petits Youtubeurs et toutes sortes de Broseurs. On accepte tout les frÃ¨res et sÅ“urs.", "Chez nous tu pourra **discuter** de tout et n'importe quoi : de tout ce qui est lie aux __Jeux__ (notamment Mobile Legends, AoV, PUBG, Fortnite...) et __YouTube__ avec les **joueurs**. Tu peux trouvez des equipes, des coequipiers ou des amis avec lesquels tu pourra jouer et vous classer ensemble. Tu peux aussi **discuter** des strategies, des builds et des astuces pour un certain heros afin d'ameliorer tes competences.")
+			.addField("Si tu as une question ?", " ~~N'hÃ©site~~ surtout ~~pas~~ a me demander !! ")
 			.addBlankField(true)
             .addField("BiENVENUE !");
 
@@ -200,7 +200,7 @@ bot.on("message", function(message) {
 				.addField("*Info", "Le bot vous envoie des informations sur votre profile")
 				.setFooter("Menu d'aide est en cours de reglage .. relax enfwarey")
 			message.channel.sendMessage(help_embed);
-			console.log("Commande Help demandée !");
+			console.log("Commande Help demandÃ©e !");
 			break;
 		case "wesh":
 			message.channel.sendMessage("Bien ou quoi la Familiana ?!");
@@ -305,4 +305,4 @@ bot.on("message", function(message) {
 });
 
 // Connexion
-bot.login('NDQ5NzU3Mzk4MDczMjEyOTQ5.DfD9rQ.i5ER11AfIlKftzWU7nB20fFmVyY') // Token
+bot.login(process.env.TOKEN); // Token
