@@ -213,7 +213,7 @@ bot.on("message", function(message) {
 				.setColor(0xFF80D5)
 				.setTitle(`XP de ${message.author.username}`)
 				.setDescription("Voici le total de tes XP enfwarey !")
-				.setField("Bravo à toi :", `${message.author.username}#${message.author.discriminator}`)
+				.addField("Bravo à toi :", `${message.author.username}#${message.author.discriminator}`)
 				.addField("Tu as actuellement :", `${xpfinal[1]} xp`)
 			message.channel.send({embed: xp_embed});
 			break;
