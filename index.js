@@ -335,7 +335,7 @@ bot.on("message", async message => {
 			if(toMute.roles.has(role.id)) return message.channel.sendMessage("Il est deja Muted, tu veux quoi de plus Enfwarey !?");
 			await toMute.addRole(role);
 			message.channel.sendMessage("c'est fait, Je l'ai Mute !");
-			break;
+			return;
 		case "unmute":
 			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("Je comprend mais il te faut quand meme quelques permissions pour faire cela ..");
 			if(!toMute) return message.channel.sendMessage("Il faut mentionner quelqu'un Bro");
