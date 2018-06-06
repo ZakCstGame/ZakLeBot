@@ -338,7 +338,6 @@ bot.on("message", async message => {
 			break;
 		case "unmute":
 			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("Je comprend mais il te faut quand meme quelques permissions pour faire cela ..");
-			if(message.channel.permissionFor(message.member).hasPermission("MANAGE_MESSAGES"));
 			Let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
 			if(!toMute) return message.channel.sendMessage("Il faut mentionner quelqu'un Bro");
 			Let role = message.guild.roles.find(r => r.name === "TG Tu es Muted");
@@ -346,6 +345,7 @@ bot.on("message", async message => {
 			await toMute.removeRole(role);
 			message.channel.sendMessage("c'est fait, Je l'ai unMute !");
 			break;
+
 		default:
 			message.channel.sendMessage("Commande invalide 7mar");
 
