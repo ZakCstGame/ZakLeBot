@@ -305,6 +305,45 @@ bot.on("message", function(message) {
 			}
 			}
 			break;
+		case "mute":
+			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("Hehee petit chanapant, il te faut quelques permissions pour faire ceci ..");
+			if(message.channel.permissionFor(message.member).hasPermission("MANAGE_MESSAGES"));
+			Let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
+			if(!toMute) return message.channel.sendMessage("Il faut mentionner quelqu'un Bro");
+			if(toMute.id === message.author.id) return message.channel.sendMessage("Tu ne peux pas te Mute toi meme, ololooo vraiment un 7mar toi !");
+			if(toMute.highestRole.position >= message.member.highestRole.position) return message.channel.sendMessage("Ha lui tu ne peux pas le test ptit frere, oublie !");
+			Let role = message.guild.roles.find(r => r.name === "TG Tu es Muted");
+			if(!role) {
+				try {
+					role = await message.guild.createRole({
+						name: "TG Tu es Muted",
+						color: "#581845",
+						permissions: []
+					});
+					message.guild.channels.forEach(async (channel, id) => {
+						await channel.overwritePermissions(role, {
+							SEND_MESSAGES: false,
+							ADD_REACTIONS: false
+						});
+					});
+				} catch(e) {
+					console.log(e.stack);
+				}
+			}
+			if(toMute.roles.has(role.id)) return message.channel.sendMessage("Il est deja Muted, tu veux quoi de plus Enfwarey !?");
+			await toMute.addRole(role);
+			message.channel.sendMessage("c'est fait, Je l'ai Mute !");
+			break;
+		case "unmute":
+			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("Je comprend mais il te faut quand meme quelques permissions pour faire cela ..");
+			if(message.channel.permissionFor(message.member).hasPermission("MANAGE_MESSAGES"));
+			Let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
+			if(!toMute) return message.channel.sendMessage("Il faut mentionner quelqu'un Bro");
+			Let role = message.guild.roles.find(r => r.name === "TG Tu es Muted");
+			if(!role || !toMute.roles.has(role.id)) return message.channel.sendMessage("Il est deja Muted, tu veux quoi de plus Enfwarey !?");
+			await toMute.removeRole(role);
+			message.channel.sendMessage("c'est fait, Je l'ai unMute !");
+			break;
 		default:
 			message.channel.sendMessage("Commande invalide 7mar");
 
