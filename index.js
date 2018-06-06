@@ -162,7 +162,7 @@ bot.on('message', message => {
 	}
 });
 
-bot.on("message", function(message) {
+bot.on("message", async message => {
 	if (message.author.equals(bot.user)) return;
 
 	if (!message.content.startsWith(PREFIX)) return;
