@@ -243,6 +243,7 @@ bot.on("message", async message => {
 					name: "avatar.png"
 				}
 			]});
+			break;
 		case "moi":
 			message.channel.sendMessage(message.author.toString() + " <- Enfwarey te voila notifiey");
 			var moi_embed = new Discord.RichEmbed()
