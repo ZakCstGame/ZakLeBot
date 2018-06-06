@@ -308,7 +308,7 @@ bot.on("message", function(message) {
 		case "mute":
 			if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.sendMessage("Hehee petit chanapant, il te faut quelques permissions pour faire ceci ..");
 			if(message.channel.permissionFor(message.member).hasPermission("MANAGE_MESSAGES"));
-			Let toMute = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0]); 
+			Let toMute = message.mentions.members.first() || message.guild.members.get(args[0]); 
 			if(!toMute) return message.channel.sendMessage("Il faut mentionner quelqu'un Bro");
 			if(toMute.id === message.author.id) return message.channel.sendMessage("Tu ne peux pas te Mute toi meme, ololooo vraiment un 7mar toi !");
 			if(toMute.highestRole.position >= message.member.highestRole.position) return message.channel.sendMessage("Ha lui tu ne peux pas le test ptit frere, oublie !");
