@@ -236,6 +236,13 @@ bot.on("message", async message => {
 				.setThumbnail(message.author.avatarURL)
 			message.channel.sendMessage(info_embed);
 			break;
+		case "avatar":
+			message.channel.send({files: [
+				{
+					attachement: message.author.displayAvatarURL,
+					name: "avatar.png"
+				}
+			]});
 		case "moi":
 			message.channel.sendMessage(message.author.toString() + " <- Enfwarey te voila notifiey");
 			var moi_embed = new Discord.RichEmbed()
