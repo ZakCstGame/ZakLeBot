@@ -212,7 +212,8 @@ bot.on("message", function(message) {
 			var xp_embed = new Discord.RichEmbed()
 				.setColor(0xFF80D5)
 				.setTitle(`XP de ${message.author.username}`)
-				.setDescription("Voici tous tes XP enfwarey !")
+				.setDescription("Voici le total de tes XP enfwarey !")
+				.setField("Bravo à toi :", `${message.author.username}#${message.author.discriminator}`)
 				.addField("Tu as actuellement :", `${xpfinal[1]} xp`)
 			message.channel.send({embed: xp_embed});
 			break;
@@ -237,6 +238,13 @@ bot.on("message", function(message) {
 			break;
 		case "moi":
 			message.channel.sendMessage(message.author.toString() + " <- Enfwarey te voila notifiey");
+			var moi_embed = new Discord.RichEmbed()
+				.setAuthor(message.author.username)
+				.setDescription("ça c'est toi Enfwarey, c'est tes infos !")
+				.setColor(0x9B59B6)
+				.addField(":id:", message.author.id)
+				.addField("Cree le :", message.author.createdAt);
+			message.channel.sendEmbed(moi_embed);
 			break;
 		case "jenesuispas":
 			message.member.removeRole(message.member.guild.roles.find("name", "lopette"));
