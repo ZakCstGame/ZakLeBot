@@ -4,7 +4,7 @@ module.exports.run = async (bot, message, args) =>{
 
 	let moi_embed = new Discord.RichEmbed()
 		.setAuthor(message.author.username)
-		.setDescription("ça c'est toi Enfwarey, c'est tes infos !")
+		.setDescription("Ã§a c'est toi Enfwarey, c'est tes infos !")
 		.setColor(0x9B59B6)
 		.addField(":id:", message.author.id)
 		.addField("Cree le :", message.author.createdAt);
@@ -13,5 +13,5 @@ module.exports.run = async (bot, message, args) =>{
 }
 
 module.exports.help = {
-	name: "moi"
+	name: "Moi"
 }
