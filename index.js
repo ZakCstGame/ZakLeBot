@@ -3,7 +3,24 @@ const Discord = require('discord.js');
 /*const Google = require('./LesCommandes/Random/google')
 const Play = require('./LesCommandes/Random/play');*/
 const commando = require('discord.js-commando');
-const bot = new commando.Client();
+const bot = new Discord.Client({disableEveryone: true});
+bot.commands = new Discord.Collection();
+const fs = require("fs");
+fs.readdir("./LesCommandes/", (err, files) => {
+	if(err) console.error(err);
+	let jsfiles = files.filter(f => f.split(".").pop() === "js");
+	if(jsfiles.length <= 0) {
+		console.log("Pas decommandesa charger !");
+		return;
+	}
+	console.log(`${jsfiles.length} Commandes ont ete charges !`);
+	jsfiles.forEach((f, i) => {
+		let props = require(`./LesCommandes/${f}`);
+		console.log(`${i + 1}: ${f} a ete charge !`);
+		bot.commands.set(props.help.name, props);
+	});
+});
+
 /*bot.registry.registerGroup('random', 'Random');
 bot.registry.registerDefaults();
 bot.registry.registerCommandsIn(__dirname + "/LesCommandes");*/
@@ -163,15 +180,19 @@ bot.on('message', message => {
 });
 
 bot.on("message", async message => {
-	if (message.author.equals(bot.user)) return;
+	if (message.author.bot) return;
+	if (message.channel.type === "dm") return;
 
-	if (!message.content.startsWith(PREFIX)) return;
+	let messageArray = message.content.split(/\s+/g);
+	let command = messageArray[0];
+	let args = messageArray.slice[1];
 
-	var args = message.content.substring(PREFIX.length).split(" ");
+	if (!command.startsWith(PREFIX)) return;
 
-	switch (args[0].toLowerCase()) {
+	let cmd = bot.commands.get(command.slice(PREFIX.length));
+	if (cmd) cmd.run(bot, message, args);
 
-		case "newstory":
+	/*	case "newstory":
 			var value = message.content.substr(10);
 			var author = message.author.toString();
 			var number = db.get("histoires").map('id').value();
@@ -352,12 +373,12 @@ bot.on("message", async message => {
 			if(!role || !toMute.roles.has(role.id)) return message.channel.sendMessage("Il est deja Muted, tu veux quoi de plus Enfwarey !?");
 			await toMute.removeRole(role);
 			message.channel.sendMessage("c'est fait, Je l'ai unMute !");
-			break;*/
+			break;
 
 		default:
 			message.channel.sendMessage("Commande invalide 7mar");
 
-	}
+	}*/
 
 });
 
