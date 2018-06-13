@@ -10,10 +10,10 @@ fs.readdir("./LesCommandes/", (err, files) => {
 	if(err) console.error(err);
 	let jsfiles = files.filter(f => f.split(".").pop() === "js");
 	if(jsfiles.length <= 0) {
-		console.log("Pas decommandesa charger !");
+		console.log("Pas de commandes a charger !");
 		return;
 	}
-	console.log(`${jsfiles.length} Commandes ont ete charges !`);
+	console.log(`${jsfiles.length} Commandes ont ete chargees !`);
 	jsfiles.forEach((f, i) => {
 		let props = require(`./LesCommandes/${f}`);
 		console.log(`${i + 1}: ${f} a ete charge !`);
@@ -39,6 +39,9 @@ var randnum = 0;
 var fortunes = [
 	"Oui",
 	"Demande a ton pere",
+	"C'est toi Monsieur je sais tout askip ..",
+	"Mdr .. !????"
+	"Gros, tu sais très bien que je suis un Robot, antipathique en plus ..!"
 	"Je ne comprend pas ..",
 	"C'est totalement ridicule ..",
 	"Pfff .. ",
