@@ -40,8 +40,8 @@ var fortunes = [
 	"Oui",
 	"Demande a ton pere",
 	"C'est toi Monsieur je sais tout askip ..",
-	"Mdr .. !????"
-	"Gros, tu sais très bien que je suis un Robot, antipathique en plus ..!"
+	"Mdr .. !????",
+	"Gros, tu sais très bien que je suis un Robot, antipathique en plus ..!",
 	"Je ne comprend pas ..",
 	"C'est totalement ridicule ..",
 	"Pfff .. ",
